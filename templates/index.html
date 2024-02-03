@@ -5,9 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet"/>
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-<h1>Hello cameras np04</h1>
+<video
+        id="my-player"
+        class="video-js"
+        controls
+        preload="auto"
+        width="800px"
+        height="600px"
+
+        data-setup="{}"
+>
+    <source src="/video_feed" type="video/mp4"/>
+
+
+</video>
+<script src="script.js"></script>
 </body>
 </html>
