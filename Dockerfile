@@ -1,6 +1,6 @@
-FROM python:3.10
-EXPOSE 5000
+FROM python:3.11
+EXPOSE 8080
 WORKDIR /app
-RUN pip install flask
 COPY . .
-CMD ["flask", "run", "--host", "0.0.0.0"]
+RUN pip install -r requirements.txt
+CMD ["python3", "main.py"]
