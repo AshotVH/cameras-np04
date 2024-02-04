@@ -36,23 +36,3 @@ player2.on('loadedmetadata', function() {
     console.log('Resolution:', width, 'x', height);
 });
 
-let lastTime = 0;
-let lastLoaded = 0;
-
-player2.on('progress', function() {
-    let currentTime = player2.currentTime();
-    let currentLoaded = player2.bufferedBytesEnd();
-
-    if (lastTime !== 0 && lastLoaded !== 0) {
-        let timeDiff = currentTime - lastTime;
-        let dataDiff = currentLoaded - lastLoaded;
-
-        if (timeDiff > 0) {
-            let bandwidth = (dataDiff / timeDiff) * 8; // convert to bits per second
-            console.log('Estimated Bandwidth:', bandwidth, 'bps');
-        }
-    }
-
-    lastTime = currentTime;
-    lastLoaded = currentLoaded;
-});
