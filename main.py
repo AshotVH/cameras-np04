@@ -13,7 +13,10 @@ def index():
 def video_feed(stream_id):
 
     # URL of the internal video stream
-    internal_stream_url = f"https://cam401-np04-slow-control.app.cern.ch/api/stream.mp4?src={stream_id}&mp4=flac"
+    # internal_stream_url = f"https://cam401-np04-slow-control.app.cern.ch/api/stream.mp4?src={stream_id}&mp4=flac"
+    internal_stream_url = f"http://188.185.78.34:1984/api/stream.mp4?src={stream_id}&mp4=flac"
+    
+
 
     def generate():
         with requests.get(internal_stream_url, stream=True) as r:
