@@ -1,4 +1,4 @@
-const options = {};
+const options = {autoplay: true};
 
 const player = videojs('my-player', options, function onPlayerReady() {
   videojs.log('Your player is ready!');
