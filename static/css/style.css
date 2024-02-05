@@ -1,4 +1,21 @@
-html,
 body {
-  background-color: aqua;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #033463, rgb(18, 70, 110));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.buttons_container {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.btn-group {
+  background-color: white;
+}
+.video_container {
+  margin-top: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
 }

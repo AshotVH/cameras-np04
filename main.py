@@ -11,12 +11,9 @@ def index():
 
 @app.route('/video_feed/<stream_id>')
 def video_feed(stream_id):
-
     # URL of the internal video stream
     internal_stream_url = f"https://streams-np04-slow-control.app.cern.ch/api/stream.mp4?src={stream_id}&mp4=flac"
-      
-
-
+  
     def generate():
         with requests.get(internal_stream_url, stream=True) as r:
             for chunk in r.iter_content(chunk_size=4096):
