@@ -15,8 +15,10 @@ window.onload = () => {
   const videoButtons = document.getElementsByClassName("btn-check");
   for (let i = 0; i < videoButtons.length; i++) {
     videoButtons[i].addEventListener("click", function (event) {
-      let streamId = event.target.getAttribute("data-streamid");
-      player.src('/video_feed/' + streamId);
+      const streamId = event.target.getAttribute("data-streamid");
+      const streamUrl = '/video_feed/' + streamId;
+      player.src({ type: 'video/mp4', src: streamUrl });
+      
       console.log(player.src());
       player.load();
       player.play();
