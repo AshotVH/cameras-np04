@@ -18,6 +18,7 @@ window.onload = () => {
       let streamId = event.target.getAttribute("data-streamid");
       player.src('/video_feed/' + streamId);
       console.log(player.src());
+      player.load();
       player.play();
     });
   }
