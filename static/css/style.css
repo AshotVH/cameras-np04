@@ -1,9 +1,5 @@
 body {
-  height: 100%;
-  background-image: linear-gradient(to bottom right, #033463, rgb(18, 70, 110));
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+ background-color: #004c93;
 }
 .buttons_container {
   padding: 10px 0;
