@@ -15,9 +15,10 @@ def video_feed(stream_id):
     # internal_stream_url = f"https://streams-np04-slow-control.app.cern.ch/api/stream.mp4?src={stream_id}&mp4=flac"
     
     internal_stream_url = f"http://137.138.155.45:1984/api/stream.mp4?src={stream_id}&mp4=flac"
+    internal_stream_url2 = "http://137.138.155.45:1984/stream.html?src=pattern&mode=mse"
   
     def generate():
-        with requests.get(internal_stream_url, stream=True) as r:
+        with requests.get(internal_stream_url2, stream=True) as r:
             for chunk in r.iter_content(chunk_size=4096):
                 yield chunk
 

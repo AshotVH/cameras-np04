@@ -1,10 +1,9 @@
 window.onload = () => {
   const options = { autoplay: true, fluid: true };
   const player = videojs("player", options, function onPlayerReady() {
+    player.src({ type: 'video/mp4', src: "/video_feed/cam401" });
     this.play();
-    this.on("ended", function () {
-      videojs.log("stream ended");
-    });
+   
   });
 
   player.on("loadedmetadata", function () {
@@ -16,6 +15,7 @@ window.onload = () => {
   for (let i = 0; i < videoButtons.length; i++) {
     videoButtons[i].addEventListener("click", function (event) {
       const streamId = event.target.getAttribute("data-streamid");
+    
       const streamUrl = '/video_feed/' + streamId;
       player.src({ type: 'video/mp4', src: streamUrl });
       
