@@ -13,7 +13,7 @@ def index():
 def video_feed(stream_id):
     
     # internal_stream_url = f"http://137.138.155.45:1984/api/stream.mp4?src={stream_id}&mp4=flac"
-    internal_stream_url = "188.185.66.11:9000"
+    internal_stream_url = "188.185.66.11:9000/video.mp4"
 
     
   
