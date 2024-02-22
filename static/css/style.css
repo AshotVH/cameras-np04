@@ -1,17 +1,13 @@
 body {
- background-color: #004c93;
+  background-color: #004c93;
 }
 .buttons_container {
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
+  padding: 30px 0 10px 0;
+
 }
 .btn-group {
   background-color: white;
 }
 .video_container {
-  margin-top: 20px;
   padding-top: 10px;
-  display: flex;
-  justify-content: center;
 }

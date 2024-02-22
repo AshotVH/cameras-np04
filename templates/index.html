@@ -27,49 +27,75 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="buttons_container">
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam401" data-streamid="cam401" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btn_cam401">CAM401</label>
-        
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam404" data-streamid="cam404" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_cam404">CAM404</label>
-        
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam406" data-streamid="cam406" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_cam406">CAM406</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btn_407" data-streamid="cam407" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_407">CAM407</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btn_408" data-streamid="cam408" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_408">CAM408</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam409" data-streamid="cam409" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_cam409">CAM409</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam410" data-streamid="cam410" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_cam410">CAM410</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btn_cam411" data-streamid="cam411" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btn_cam411">CAM411</label>
+    <div class="container">
+      <div class="row">
+        <div class="col d-flex justify-content-center buttons_container">
+          <div class="btn-group btn-group-justified">
+            <a
+              href="{{url_for('index',cam='cam401' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam401' %}active{% endif %}"
+              >CAM401</a
+            >
+            <a
+              href="{{url_for('index',cam='cam404' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam404' %}active{% endif %}"
+              >CAM404</a
+            >
+            <a
+              href="{{url_for('index',cam='cam406' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam406' %}active{% endif %}"
+              >CAM406</a
+            >
+            <a
+              href="{{url_for('index',cam='cam407' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam407' %}active{% endif %}"
+              >CAM407</a
+            >
+            <a
+              href="{{url_for('index',cam='cam408' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam408' %}active{% endif %}"
+              >CAM408</a
+            >
+            <a
+              href="{{url_for('index',cam='cam409' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam409' %}active{% endif %}"
+              >CAM409</a
+            >
+            <a
+              href="{{url_for('index',cam='cam410' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam410' %}active{% endif %}"
+              >CAM410</a
+            >
+            <a
+              href="{{url_for('index',cam='cam411' )}}"
+              class="btn btn-outline-primary {% if cam == 'cam411' %}active{% endif %}"
+              >CAM411</a
+            >
+          </div>
         </div>
+      </div>
+      
     </div>
-
-    <div class="video_container">
-        <video
-        id="player"
-        class="video-js"
-        controls
-        preload="auto"
-        width="1280px"
-        height="720px"
-        data-setup="{}"
-        >
-        <source src="" type="video/mp4" />
-        </video>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col video_container d-flex justify-content-center">
+          <video
+            id="player"
+            class="video-js"
+            controls
+            preload="auto"
+            width="1152px"
+            height="648px"
+            data-setup="{}"
+          >
+            <source
+              src="{{url_for('video_feed', stream_id = cam)}}"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
     </div>
-  
-
     <script src="{{url_for('static', filename='js/script.js')}}"></script>
   </body>
 </html>
