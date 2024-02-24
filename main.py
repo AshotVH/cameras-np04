@@ -17,7 +17,7 @@ def index(cam):
 @app.route('/video_feed/<stream_id>')
 def video_feed(stream_id):
     
-    internal_stream_url = f"http://{STREAM_SOURCE}/api/stream.mp4?src=video1&mp4=flac"
+    internal_stream_url = f"ws://{STREAM_SOURCE}/api/stream.mp4?src=video1"
     
     def generate():
         with requests.get(internal_stream_url, stream=True) as r:
