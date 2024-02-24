@@ -1,8 +1,9 @@
 from flask import Flask, Response, stream_with_context, request, render_template,redirect, url_for
 import requests
-
+import os
 app = Flask(__name__)
 
+STREAM_SOURCE = os.environ["STREAM_SOURCE"]
 
 @app.route('/')
 def root():
@@ -16,7 +17,7 @@ def index(cam):
 @app.route('/video_feed/<stream_id>')
 def video_feed(stream_id):
     
-    internal_stream_url = f"https://{stream_id}-np04-slow-control.app.cern.ch/api/stream.mp4?src=video&mp4=flac"
+    internal_stream_url = f"http://{STREAM_SOURCE}/api/stream.mp4?src=video1&mp4=flac"
     
     def generate():
         with requests.get(internal_stream_url, stream=True) as r:
