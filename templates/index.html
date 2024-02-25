@@ -71,6 +71,9 @@
               class="btn btn-outline-primary {% if cam == 'cam411' %}active{% endif %}"
               >CAM411</a
             >
+            {% if session.logged_in %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
           </div>
         </div>
       </div>
