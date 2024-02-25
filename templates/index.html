@@ -72,12 +72,16 @@
               >CAM411</a
             >
             {% if session.logged_in %}
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <p>
+              Log-out icon on a styled link button:
+              <a href="{{ url_for('logout') }}" class="btn btn-info btn-lg">
+                <span class="glyphicon glyphicon-log-out"></span> Log out
+              </a>
+            </p>
             {% endif %}
           </div>
         </div>
       </div>
-      
     </div>
     <div class="container">
       <div class="row justify-content-center">
