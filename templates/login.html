@@ -24,6 +24,9 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem">
               <div class="card-body p-5 text-center">
                 <h3 class="mb-5">Login</h3>
+                {% if incorrect_password %}
+                <p style="color: red">Password is incorrect</p>
+                {% endif %}
                 <form
                   class="form-outline mb-4"
                   action="{{ url_for('login') }}"

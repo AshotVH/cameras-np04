@@ -1,6 +1,7 @@
 from flask import Flask, Response, stream_with_context, request, render_template,redirect, url_for, session
 import requests
 import os
+import time
 app = Flask(__name__)
 
 STREAM_SOURCE = os.environ["STREAM_SOURCE"]
@@ -25,7 +26,8 @@ def login():
             session['logged_in'] = True
             return redirect(url_for('index', cam='cam401'))
         else:
-            return "Incorrect password"
+            time.sleep(2)
+            return redirect(url_for('login', incorrect_password=True))
     else:
         if is_logged_in():
             return redirect(url_for('index', cam='cam401'))
