@@ -17,12 +17,6 @@
     ></script>
   </head>
   <body>
-
-    <!-- <form action="{{ url_for('login') }}" method="POST">
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <button type="submit">Login</button>
-    </form> -->
     <section class="vh-100" style="background-color: #004c93">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -30,21 +24,29 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem">
               <div class="card-body p-5 text-center">
                 <h3 class="mb-5">Login</h3>
-                <form class="form-outline mb-4" action="{{ url_for('login') }}" method="POST">
+                <form
+                  class="form-outline mb-4"
+                  action="{{ url_for('login') }}"
+                  method="POST"
+                >
                   <input
                     type="password"
-                    id="password" 
-                    name="password" required 
+                    id="password"
+                    name="password"
+                    required
                     class="form-control form-control-lg"
                   />
                   <label class="form-label" for="password"
                     >Please enter password</label
                   >
-                  <br>
-                <button class="btn btn-primary btn-lg btn-block" type="submit"> Login
-                </button>
+                  <br />
+                  <button
+                    class="btn btn-primary btn-lg btn-block"
+                    type="submit"
+                  >
+                    Login
+                  </button>
                 </form>
-                 
               </div>
             </div>
           </div>
