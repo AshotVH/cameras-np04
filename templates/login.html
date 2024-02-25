@@ -24,9 +24,15 @@
             <div class="card shadow-2-strong" style="border-radius: 1rem">
               <div class="card-body p-5 text-center">
                 <h3 class="mb-5">Login</h3>
-                {% if incorrect_password %}
-                <p style="color: red">Password is incorrect</p>
-                {% endif %}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                                <p style="color: red;">{{ message }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
                 <form
                   class="form-outline mb-4"
                   action="{{ url_for('login') }}"

@@ -1,4 +1,4 @@
-from flask import Flask, Response, stream_with_context, request, render_template,redirect, url_for, session
+from flask import Flask, Response, stream_with_context, request, render_template,redirect, url_for, session, flash
 import requests
 import os
 import time
@@ -26,8 +26,9 @@ def login():
             session['logged_in'] = True
             return redirect(url_for('index', cam='cam401'))
         else:
-            time.sleep(2)
-            return redirect(url_for('login', incorrect_password=True))
+            time.sleep(1)
+            flash('Incorrect password', 'error')
+            return redirect(url_for('login'))
     else:
         if is_logged_in():
             return redirect(url_for('index', cam='cam401'))
