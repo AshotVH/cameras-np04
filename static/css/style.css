@@ -11,3 +11,8 @@ body {
 .video_container {
   padding-top: 10px;
 }
+.cameras__logout_btn{
+  position:fixed;
+  top: 5px;
+  right: 5px;
+}
