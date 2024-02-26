@@ -53,7 +53,7 @@ def index(cam):
 @app.route('/video_feed/<stream_id>')
 def video_feed(stream_id):
     if is_logged_in():
-        internal_stream_url = f"http://{STREAM_SOURCE}/api/stream.mp4?src=video1&mp4=flac"
+        internal_stream_url = f"http://{STREAM_SOURCE}/api/stream.mp4?src={stream_id}&mp4=flac"
         def generate():
             with requests.get(internal_stream_url, stream=True) as r:
                 for chunk in r.iter_content(chunk_size=4096):
