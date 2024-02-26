@@ -29,13 +29,6 @@
     <title>NP04 Cameras</title>
   </head>
   <body>
-    {% if session.logged_in %}
-    <div class="cameras__logout_btn">
-      <a href="{{ url_for('logout') }}" class="btn btn-info btn-lg btn-light">
-        <span class="glyphicon glyphicon-log-out"></span> Log out
-      </a>
-    </div>
-    {% endif %}
     <header class="container page_header">
       <div class="row justify-content-between">
         <div class="col page-title">NP04 Cameras</div>
@@ -70,7 +63,6 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam401' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam401' )}}"
-                    target="_blank"
                     >CAM-401</a
                   >
                 </li>
@@ -81,8 +73,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam404' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam404' )}}"
-                    target="_blank"
-                    >CAM-404</a
+                      >CAM-404</a
                   >
                 </li>
               </ul>
@@ -92,7 +83,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam406' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam406' )}}"
-                    target="_blank"
+                   
                     >CAM-406</a
                   >
                 </li>
@@ -103,7 +94,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam407' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam407' )}}"
-                    target="_blank"
+                   
                     >CAM-407</a
                   >
                 </li>
@@ -114,7 +105,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam408' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam408' )}}"
-                    target="_blank"
+               
                     >CAM-408</a
                   >
                 </li>
@@ -125,7 +116,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam409' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam409' )}}"
-                    target="_blank"
+                
                     >CAM-409</a
                   >
                 </li>
@@ -136,7 +127,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam410' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam410' )}}"
-                    target="_blank"
+                  
                     >CAM-410</a
                   >
                 </li>
@@ -147,7 +138,7 @@
                     class="flex-sm-fill text-sm-center nav-link {% if cam == 'cam411' %}active{% endif %}"
                     aria-current="page"
                     href="{{url_for('index',cam='cam411' )}}"
-                    target="_blank"
+                
                     >CAM-411</a
                   >
                 </li>
