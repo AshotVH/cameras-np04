@@ -48,20 +48,5 @@ def index(cam):
     else:
         return redirect(url_for('root'))
 
-
-
-@app.route('/video_feed/<stream_id>')
-def video_feed(stream_id):
-    if is_logged_in():
-        internal_stream_url = f"http://{STREAM_SOURCE}/api/stream.mp4?src={stream_id}&mp4=flac"
-        def generate():
-            with requests.get(internal_stream_url, stream=True) as r:
-                for chunk in r.iter_content(chunk_size=4096):
-                    yield chunk
-        return Response(stream_with_context(generate()), content_type='multipart/x-mixed-replace; boundary=frame')
-    else:
-        return "Unauthorized", 401
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

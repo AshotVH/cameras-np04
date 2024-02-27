@@ -151,20 +151,13 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col video_container d-flex justify-content-center">
-          <video
-            id="player"
-            class="video-js"
-            controls
-            preload="auto"
-            width="960px"
-            height="540px"
-            data-setup="{}"
-          >
-            <source
-              src="{{url_for('video_feed', stream_id = cam)}}"
-              type="video/mp4"
-            />
-          </video>
+          <iframe
+          id="video_frame"
+          width="960"
+          height="540"
+          src="https://streams-np04-slow-control.app.cern.ch/stream.html?src=cartoon1&mode=mse"
+          onload="onLoadHandler()">
+        </iframe>
         </div>
       </div>
     </div>
