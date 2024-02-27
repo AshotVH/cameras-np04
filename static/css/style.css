@@ -56,6 +56,9 @@ body {
   color: white !important;
   border-radius: 5px;
 }
+.video_frame {
+  width: 100%;
+}
 @media screen and (min-width: 576px) {
   .nav-link {
     font-size: 1.2rem;
