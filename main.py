@@ -1,52 +1,23 @@
-from flask import Flask, Response, stream_with_context, request, render_template,redirect, url_for, session, flash
-import requests
+from flask import Flask, render_template
 import os
-import time
+
+
 app = Flask(__name__)
 
-STREAM_SOURCE = os.environ["STREAM_SOURCE"]
-PASSWORD = os.environ.get("PASSWORD")
-app.secret_key = os.environ.get("SECRET_KEY", "secret")
+STREAM_SOURCE_1 = os.environ["STREAM_SOURCE_1"]
+STREAM_SOURCE_2 = os.environ["STREAM_SOURCE_2"]
+STREAM_SOURCE_3 = os.environ["STREAM_SOURCE_3"]
+STREAM_SOURCE_4 = os.environ["STREAM_SOURCE_4"]
+STREAM_SOURCE_5 = os.environ["STREAM_SOURCE_5"]
+STREAM_SOURCE_6 = os.environ["STREAM_SOURCE_6"]
+STREAM_SOURCE_7 = os.environ["STREAM_SOURCE_7"]
+STREAM_SOURCE_8 = os.environ["STREAM_SOURCE_8"]
 
-def is_logged_in():
-    return session.get("logged_in")
 
 @app.route('/')
 def root():
-    if is_logged_in():
-        return redirect(url_for('index', cam='cam401'))
-    else:
-        return render_template('login.html')
+    return render_template('index.html',cam401=STREAM_SOURCE_1,cam404=STREAM_SOURCE_2,cam406=STREAM_SOURCE_3,cam407=STREAM_SOURCE_4,cam408=STREAM_SOURCE_5,cam409=STREAM_SOURCE_6,cam410=STREAM_SOURCE_7,cam411=STREAM_SOURCE_8)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        password = request.form.get('password')
-        if password == PASSWORD:
-            session['logged_in'] = True
-            return redirect(url_for('index', cam='cam401'))
-        else:
-            time.sleep(1)
-            flash('Incorrect password', 'error')
-            return redirect(url_for('login'))
-    else:
-        if is_logged_in():
-            return redirect(url_for('index', cam='cam401'))
-        else:
-            return render_template('login.html')
-
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect(url_for('root'))
-
-
-@app.route('/<cam>')
-def index(cam):
-    if is_logged_in():
-        return render_template('index.html', cam=cam)
-    else:
-        return redirect(url_for('root'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
