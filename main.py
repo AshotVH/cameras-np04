@@ -16,7 +16,7 @@ STREAM_SOURCE_8 = os.environ["STREAM_SOURCE_8"]
 
 @app.route('/')
 def root():
-    return render_template('index.html',cam401=STREAM_SOURCE_1,cam404=STREAM_SOURCE_2,cam406=STREAM_SOURCE_3,cam407=STREAM_SOURCE_4,cam408=STREAM_SOURCE_5,cam409=STREAM_SOURCE_6,cam410=STREAM_SOURCE_7,cam411=STREAM_SOURCE_8)
+    return render_template('index.html',cam401=STREAM_SOURCE_1,cam404=STREAM_SOURCE_2,cam405=STREAM_SOURCE_3,cam407=STREAM_SOURCE_4,cam408=STREAM_SOURCE_5,cam409=STREAM_SOURCE_6,cam410=STREAM_SOURCE_7,cam411=STREAM_SOURCE_8)
 
 
 if __name__ == '__main__':
